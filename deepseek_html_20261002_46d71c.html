@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информационная карточка • Виталик и Дмитрий</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+        }
+
+        /* Карточка 700×650 — белый фон, без тени, всё влезает */
+        .hero-card {
+            width: 700px;
+            height: 650px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 14px;
+            gap: 14px;
+        }
+
+        /* Сетка: два столбца строго рядом */
+        .heroes-grid {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+            gap: 14px;
+        }
+
+        /* Колонка героя */
+        .hero-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border-radius: 22px;
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid #e2ecf5;
+            min-width: 0;
+        }
+
+        /* ===== ИЗОБРАЖЕНИЕ — ровно половина высоты колонки ===== */
+        .hero-image {
+            height: 50%;
+            width: 100%;
+            object-fit: cover;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        /* Цветная шапка с именем и ролью */
+        .hero-header {
+            padding: 10px 14px 8px 14px;
+            flex-shrink: 0;
+        }
+
+        .vitalik .hero-header {
+            background: #1f6fb0;
+        }
+
+        .dmitry .hero-header {
+            background: #2e7d4f;
+        }
+
+        .hero-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .hero-name .age {
+            font-size: 0.85rem;
+            font-weight: 400;
+            background: rgba(255,255,255,0.22);
+            padding: 2px 9px;
+            border-radius: 40px;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .hero-name .age::before {
+            content: "🎓";
+            font-size: 0.9rem;
+        }
+
+        .hero-role {
+            font-size: 0.76rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.92);
+            margin-top: 3px;
+            line-height: 1.25;
+        }
+
+        /* Текстовые пункты с иконками */
+        .hero-desc {
+            padding: 10px 12px 12px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+            background: #fafcff;
+            min-height: 0;
+        }
+
+        .desc-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            font-size: 0.75rem;
+            line-height: 1.38;
+            color: #1e3d4f;
+        }
+
+        .desc-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .vitalik .desc-icon {
+            background: #dbecfb;
+            color: #1f6fb0;
+        }
+
+        .dmitry .desc-icon {
+            background: #d9f0e3;
+            color: #2e7d4f;
+        }
+
+        .desc-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .desc-text strong {
+            color: #0b4b66;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-card">
+        <div class="heroes-grid">
+
+            <!-- ========= ВИТАЛИК ========= -->
+            <div class="hero-col vitalik">
+                <img class="hero-image" src="Урок 1 сцена 2.jpeg" alt="Виталик, инженер-стажер">
+
+                <div class="hero-header">
+                    <div class="hero-name">
+                        Виталик
+                        <span class="age">24 года</span>
+                    </div>
+                    <div class="hero-role">инженер-стажер</div>
+                </div>
+
+                <div class="hero-desc">
+                    <div class="desc-item">
+                        <div class="desc-icon">💼</div>
+                        <div class="desc-text">Пришел на предприятие по производству бытовой химии и будет работать под началом Дмитрия.</div>
+                    </div>
+                    <div class="desc-item">
+                        <div class="desc-icon">📘</div>
+                        <div class="desc-text">Только начинает и многого не знает, но старается запомнить каждую мелочь.</div>
+                    </div>
+                    <div class="desc-item">
+                        <div class="desc-icon">❓</div>
+                        <div class="desc-text">Задает вопросы, которые постепенно перестают казаться наивными, и на его глазах формальные требования превращаются в понятную логику.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========= ДМИТРИЙ ========= -->
+            <div class="hero-col dmitry">
+                <img class="hero-image" src="15.png" alt="Дмитрий, руководитель службы промышленной безопасности">
+
+                <div class="hero-header">
+                    <div class="hero-name">
+                        Дмитрий
+                    </div>
+                    <div class="hero-role">руководитель службы промышленной безопасности</div>
+                </div>
+
+                <div class="hero-desc">
+                    <div class="desc-item">
+                        <div class="desc-icon">👷</div>
+                        <div class="desc-text">Не читает нотации, а показывает, как думает инженер, когда проверяет документ.</div>
+                    </div>
+                    <div class="desc-item">
+                        <div class="desc-icon">📋</div>
+                        <div class="desc-text">Объясняет, что смотрит первым, что сверяет, где останавливается и почему.</div>
+                    </div>
+                    <div class="desc-item">
+                        <div class="desc-icon">👥</div>
+                        <div class="desc-text">Помогает Виталику увидеть в формальных требованиях понятную логику и стать увереннее в профессии.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const cols = document.querySelectorAll('.hero-col');
+            cols.forEach(col => {
+                col.addEventListener('click', function() {
+                    cols.forEach(c => c.style.boxShadow = '');
+                    this.style.boxShadow = '0 0 0 3px #3b8bb9';
+                    setTimeout(() => {
+                        this.style.boxShadow = '';
+                    }, 1000);
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
